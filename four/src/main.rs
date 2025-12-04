@@ -40,7 +40,7 @@ fn main() {
                         vec_2d.get(i + 1).unwrap().get(j).unwrap(),
                         vec_2d.get(i + 1).unwrap().get(j + 1).unwrap(),
                     ];
-                    let neighbor_count = neighbors.iter().filter(|&&n| *n).count();
+                    let neighbor_count = neighbors.iter().filter(|n| ***n).count();
 
                     if neighbor_count < 4 {
                         vec_2d[i][j] = false;
