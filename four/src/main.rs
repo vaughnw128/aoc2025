@@ -1,3 +1,5 @@
+// https://adventofcode.com/2025/day/4
+
 use std::env;
 use std::fs::read_to_string;
 

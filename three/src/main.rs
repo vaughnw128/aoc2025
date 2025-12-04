@@ -1,4 +1,4 @@
-// https://adventofcode.com/2025/day/2
+// https://adventofcode.com/2025/day/3
 
 use std::fs::read_to_string;
 
