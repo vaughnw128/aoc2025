@@ -4,13 +4,15 @@ use std::fs::read_to_string;
 
 
 fn main() {
-    // let args = env::args().collect::<Vec<String>>();
-    // let input = &args[1];
-
-    // I fucked it up lol, got one star... will come back to this!
-
+    let mut sum = 0;
     for line in read_to_string("input").unwrap().lines() {
-        let mut digits = line.chars().collect::<Vec<char>>();
+        let mut bank = line.chars().map(|c| c as u8 - '0' as u8).collect::<Vec<u8>>();
+
+        let mut new_bank = vec![0; bank.len()];
+        let mut cursor = 0;
+        for i in (bank.len()-11..bank.len()) {
+
+        }
     }
 
 }
