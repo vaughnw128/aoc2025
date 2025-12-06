@@ -14,6 +14,7 @@ fn main() {
     for line in read_to_string("input").unwrap().lines() {
         if line == "" { break; }
 
+        // transform into vec of tuples so we can easily sort and parse out the ranges
         let nums = line
             .split('-')
             .map(|n| n.parse::<u64>().unwrap())
@@ -21,7 +22,6 @@ fn main() {
 
         ranges.push((nums[0], nums[1]));
     }
-    ranges.sort_by(|x, y| x.partial_cmp(y).unwrap());
 
     // union any overlapped ranges
     for i in 0..ranges.len() {
@@ -36,11 +36,9 @@ fn main() {
             }}
         }
 
-    // kill marked ranges
-    ranges.retain(|&r| r != (0, 0));
-
-    // count remaining ranges
+    // count remaining ranges ignoring culled ones
     for r in ranges {
+        if r.0 == 0 { continue; }
         total += r.1 - r.0 + 1;
     }
 
