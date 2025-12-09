@@ -1,4 +1,6 @@
 use std::collections::HashMap;
+use std::thread;
+use std::time::Duration;
 
 #[derive(Debug, Clone)]
 enum GridElement {
@@ -147,7 +149,7 @@ pub fn solve_1(input: &str) -> u128 {
 
 pub fn solve_2(input: &str) -> u128 {
     let grid = parse_input(&input);
-
+    
     let start_loc = get_start(&grid);
     let mut beam = Beam::new_immutable(start_loc.0, start_loc.1);
 
